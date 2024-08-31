@@ -1,3 +1,11 @@
+/* Reset básico para garantir consistência entre os navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -9,19 +17,25 @@ body {
     color: white;
 }
 
+/* Container principal */
 .container {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
     background-color: #3a3a3a;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;  /* Para tablets ou dispositivos maiores */
 }
 
+/* Estilo da imagem/logo */
 .logo {
-    width: 150px;
+    width: 100%;
+    max-width: 150px;
     margin-bottom: 20px;
 }
 
+/* Estilo do container dos inputs */
 .inputs-container {
     display: flex;
     align-items: center;
@@ -29,10 +43,12 @@ body {
     margin-bottom: 20px;
 }
 
+/* Inputs de número */
 input[type="number"] {
     padding: 10px;
     font-size: 16px;
-    width: 80px;
+    width: 100px;
+    max-width: 35%;
     margin: 0 5px;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -41,12 +57,14 @@ input[type="number"] {
     text-align: center;
 }
 
+/* Estilo da label entre os inputs */
 .label {
     font-size: 18px;
     font-weight: bold;
     margin: 0 5px;
 }
 
+/* Estilo do botão */
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -55,14 +73,39 @@ button {
     background-color: #6a0dad;
     color: white;
     cursor: pointer;
+    width: 100%;
+    max-width: 150px; /* Para dispositivos maiores */
 }
 
 button:hover {
     background-color: #5a0ba1;
 }
 
+/* Estilo do texto de resultado */
 #resultado {
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
+}
+
+/* Estilo responsivo para dispositivos menores */
+@media (max-width: 400px) {
+    input[type="number"] {
+        font-size: 14px;
+        padding: 8px;
+        width: 80px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    #resultado {
+        font-size: 20px;
+    }
 }
